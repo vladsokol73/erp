@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title inertia>{{ config('app.name') }}</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#006fee">
+        <link rel="icon" href="{{ asset('assets/images/favicon-dark.svg') }}" />
+        <link rel="icon" href="{{ asset('assets/images/favicon-dark.svg')  }}" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon-dark.svg') }}">
+        <link rel="shortcut icon" href="{{ asset('assets/images/favicon-dark.svg') }}" type="image/x-icon">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+        <!-- Scripts -->
+        @routes
+        @viteReactRefresh
+        @vite(['resources/js/App.tsx'])
+        @inertiaHead
+    </head>
+    <body class="font-sans">
+        @inertia
+    </body>
+</html>
